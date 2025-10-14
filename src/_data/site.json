@@ -1,17 +1,3 @@
 {
-  "name": "Pod request access landing page",
-  "navigation": [
-    {
-      "text": "About",
-      "url": "/about/"
-    },
-    {
-      "text": "Service",
-      "url": "/service/"
-    },
-    {
-      "text": "Projects",
-      "url": "/projects/"
-    }
-  ]
+  "name": "Pod request access landing page"
 }

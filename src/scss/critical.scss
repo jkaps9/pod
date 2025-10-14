@@ -14,10 +14,7 @@
 
   --accent-color: var(--green);
 
-  --text-white: #fff;
-  --text-black: #000;
-
-  --bg-black: #1a1a1a;
+  --text-white: var(--white);
 
   // CONTAINER
   --container-max-width: 70rem;
@@ -104,6 +101,7 @@ main {
 
 .hero {
   position: relative;
+  color: var(--text-white);
 
   .bg-image-dots {
     visibility: hidden;

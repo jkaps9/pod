@@ -210,7 +210,7 @@ main {
 .hero .text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-200);
+  gap: clamp(var(--spacing-200), 0.5229rem + 2.0356vw, var(--spacing-300));
 }
 .hero h1 {
   font-size: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
@@ -226,8 +226,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--spacing-200);
+  gap: clamp(var(--spacing-200), -0.4313rem + 6.1069vw, var(--spacing-500));
   margin: var(--spacing-500) 0;
+  max-width: 548px;
 }
 .hero form {
   display: flex;
@@ -247,4 +248,30 @@ main {
 .hero form input::placeholder {
   color: var(--text-white);
   opacity: 0.5;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    text-align: start;
+  }
+  .hero .logo {
+    margin-bottom: var(--spacing-1300);
+  }
+  .hero .text {
+    padding-top: var(--spacing-1100);
+    max-width: 28rem;
+  }
+  .hero form {
+    margin: var(--spacing-500) 0;
+    flex-direction: row;
+    max-width: 28rem;
+    position: relative;
+  }
+  .hero form input {
+    flex-grow: 1;
+  }
+  .hero form button {
+    position: absolute;
+    right: 0;
+  }
 }

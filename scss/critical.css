@@ -108,9 +108,7 @@ select {
   --blue-300: #c2cbe5;
   --white: #ffffff;
   --accent-color: var(--green);
-  --text-white: #fff;
-  --text-black: #000;
-  --bg-black: #1a1a1a;
+  --text-white: var(--white);
   --container-max-width: 70rem;
   --container-width: 90%;
   --spacing-50: 0.25rem;
@@ -184,6 +182,7 @@ main {
 
 .hero {
   position: relative;
+  color: var(--text-white);
 }
 .hero .bg-image-dots {
   visibility: hidden;

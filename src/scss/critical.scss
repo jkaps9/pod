@@ -77,7 +77,13 @@ body {
 }
 
 main {
+  min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .bg-image-host {
@@ -103,5 +109,12 @@ main {
     visibility: hidden;
     height: 0;
     position: absolute;
+  }
+
+  .affiliates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
 }

@@ -31,38 +31,40 @@
     <div class="bg-image-dots">{% include "svgs/bg-pattern-dots.svg" %}</div>
     <div class="container">
       <div class="logo">{% include "svgs/logo.svg" %}</div>
-      <div class="text">
-        <h1>
-          <span class="accent-text">Publish your podcasts</span>
-          everywhere.
-        </h1>
-        <p>
-          Upload your audio to Pod with a single click. We’ll then distribute
-          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
-          and more!
-        </p>
-      </div>
-      <div class="affiliates">
-        {% include "svgs/spotify.svg" %}
-        {% include "svgs/apple-podcast.svg" %}
-        {% include "svgs/google-podcasts.svg" %}
-        {% include "svgs/pocket-casts.svg" %}
-      </div>
-      <div class="form-container">
-        <form action="">
-          <input
-            type="email"
-            placeholder="Email address"
-            name="email"
-            id="email"
-          />
-          <button
-            type="submit"
-            class="btn--solid"
-          >
-            Request access
-          </button>
-        </form>
+      <div class="contentt">
+        <div class="text">
+          <h1>
+            <span class="accent-text">Publish your podcasts</span>
+            everywhere.
+          </h1>
+          <p>
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+            Casts and more!
+          </p>
+        </div>
+        <div class="form-container">
+          <form action="">
+            <input
+              type="email"
+              placeholder="Email address"
+              name="email"
+              id="email"
+            />
+            <button
+              type="submit"
+              class="btn--solid"
+            >
+              Request access
+            </button>
+          </form>
+        </div>
+        <div class="affiliates">
+          {% include "svgs/spotify.svg" %}
+          {% include "svgs/apple-podcast.svg" %}
+          {% include "svgs/google-podcasts.svg" %}
+          {% include "svgs/pocket-casts.svg" %}
+        </div>
       </div>
     </div>
   </section>

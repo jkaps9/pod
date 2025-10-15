@@ -69,6 +69,8 @@
               placeholder="Email address"
               name="email"
               id="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              required
             />
             <button
               type="submit"
@@ -76,6 +78,9 @@
             >
               Request access
             </button>
+            <div class="error-text">
+              <p>Oops! Please check your email</p>
+            </div>
           </form>
         </div>
         <div class="affiliates">

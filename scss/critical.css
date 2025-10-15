@@ -182,16 +182,19 @@ input::placeholder {
 }
 
 main {
-  min-height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  min-height: 100vh;
 }
 
-.bg-image-host {
+.hero {
+  position: relative;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  place-items: center;
+}
+.hero .bg-image-host {
   position: absolute;
   top: 0;
   left: 0;
@@ -199,40 +202,24 @@ main {
   bottom: 0;
   min-width: 100vw;
   min-height: 100vh;
+  z-index: -1;
 }
-.bg-image-host::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  opacity: 0.8;
-  background: var(--accent-color);
-}
-.bg-image-host img {
+.hero .bg-image-host img {
   object-fit: cover;
   min-width: 100%;
   min-height: 100%;
   mix-blend-mode: screen;
   opacity: 0.1;
 }
-
-.bg-image-dots {
+.hero .bg-image-dots {
   visibility: hidden;
   height: 0;
   position: absolute;
 }
-
-.hero {
-  position: relative;
-  color: var(--text-white);
-}
-.hero .logo {
-  margin-bottom: var(--spacing-700);
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--spacing-700), 2.4437rem + 4.507vw, var(--spacing-1300));
 }
 .hero .content {
   display: flex;
@@ -244,13 +231,9 @@ main {
   flex-direction: column;
   gap: clamp(var(--spacing-200), 0.5229rem + 2.0356vw, var(--spacing-300));
 }
-.hero p {
-  color: var(--blue-300);
-}
 .hero .affiliates {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: clamp(var(--spacing-200), -0.4313rem + 6.1069vw, var(--spacing-500));
   max-width: 548px;
 }
@@ -259,115 +242,37 @@ main {
   flex-direction: column;
   gap: var(--spacing-100);
 }
-.hero form input {
-  border-radius: 100vw;
-  border: none;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 2em;
-  color: var(--text-white);
-  background-color: var(--blue-900);
-  padding: var(--spacing-100) var(--spacing-400);
-}
-.hero form input::placeholder {
-  color: var(--text-white);
-  opacity: 0.5;
-}
 
 @media (min-width: 48rem) {
   main {
-    align-items: flex-start;
-    padding-top: 156px;
     justify-content: flex-start;
   }
-  .bg-image-host {
+  .hero {
+    text-align: start;
+    flex-grow: 0;
+    padding-top: 156px;
+  }
+  .hero .bg-image-host {
     left: auto;
-    bottom: auto;
-    min-width: auto;
-    min-height: auto;
+    min-height: 0;
+    min-width: 0;
   }
-  .bg-image-host img {
+  .hero .bg-image-host img {
     opacity: 1;
-    min-width: auto;
-    min-height: auto;
   }
-  .bg-image-dots {
+  .hero .bg-image-dots {
     visibility: visible;
     height: auto;
     bottom: -60px;
     right: -130px;
   }
-  .hero {
-    text-align: start;
-  }
-  .hero .logo {
-    margin-bottom: var(--spacing-1300);
-  }
-  .hero .content {
-    padding-top: var(--spacing-1100);
-    background-color: var(--blue-950);
-    min-width: 37rem;
-  }
-  .hero .text {
-    max-width: 28rem;
-  }
-  .hero form {
-    flex-direction: row;
-    max-width: 28rem;
-    position: relative;
-  }
-  .hero form input {
-    flex-grow: 1;
-  }
-  .hero form button {
-    position: absolute;
-    right: 0;
-  }
-}
-@media (min-width: 70rem) {
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  .hero {
-    position: relative;
-  }
-  .hero .bg-image-host {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  .hero .bg-image-dots {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  .hero .logo {
-    margin-bottom: var(--spacing-1300);
-  }
-  .hero .affiliates {
-    display: flex;
-    justify-content: space-between;
-    gap: clamp(var(--spacing-200), -0.4313rem + 6.1069vw, var(--spacing-500));
-    max-width: 548px;
-  }
   .hero .content {
     padding-top: var(--spacing-1100);
     padding-right: var(--spacing-800);
     background-color: var(--blue-950);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-500);
-    max-width: 46rem;
+    max-width: 37rem;
   }
   .hero .text {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(var(--spacing-200), 0.5229rem + 2.0356vw, var(--spacing-300));
     max-width: 41.5625rem;
   }
   .hero .text p {
@@ -383,5 +288,20 @@ main {
   .hero form button {
     position: absolute;
     right: 0;
+  }
+}
+@media (min-width: 64rem) {
+  main {
+    justify-content: center;
+  }
+  .hero {
+    padding-top: 0;
+  }
+  .hero .bg-image-dots {
+    right: 0;
+    bottom: 0;
+  }
+  .hero .content {
+    max-width: 46rem;
   }
 }

@@ -38,7 +38,7 @@ export default function (config) {
   });
 
   return {
-    pathPrefix: "/eleventy-template/",
+    pathPrefix: "/pod/",
     markdownTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
